@@ -18,7 +18,7 @@ class HassDiscovery:
         
         self.device = DiscoveryDeviceConfig(
             name="AirQuality",
-            model="Enviro+ on Raspbery Pi Zero W 2",
+            model="Enviro+ on Raspbery Pi Zero W",
             manufacturer="Pimoroni & Raspberry Pi Foundation",
             sw_version=platform.platform(),
             connections=[['mac',self.mac]],
