@@ -65,7 +65,6 @@ class EnviroPlus:
             #"proximity": ltr559.get_proximity(),
             "illuminance": ltr559.get_lux(),
             "temperature": self.bme280.get_temperature(),
-            "temperature_f": self.bme280.get_temperature(),
             "pressure": self.bme280.get_pressure(),
             "humidity": self.bme280.get_humidity(),
             "gas_oxidising": gas_data.oxidising / 1e3, #kOhm
@@ -89,7 +88,6 @@ class EnviroPlus:
 
         readings["temperature"] = readings["temperature"] - ((avg_cpu_temp - readings["temperature"]) / self.cpu_comp_factor)
 
-        readings["temperature_f"] = readings["temperature"] * 9/5 + 32
         ah = calculate('AH', RH=readings["humidity"], p=readings['pressure'], p_unit="hPa", T=t_precomp, T_unit="degC")
         rh_comp = calculate('RH', AH=ah, p=readings['pressure'], p_unit="hPa", Tv=readings["temperature"], Tv_unit="degC") # Using the virtual temperature is close enough
         readings["humidity"] = rh_comp
