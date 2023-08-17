@@ -47,6 +47,14 @@ class HassDiscovery:
                 device=self.device,
                 device_class="temperature"
             ),
+            "temperature_f": DiscoverySensorConfig(
+                client_id=self.client_id,
+                prefix=self.prefix,
+                name="Temperature (F)",
+                unit_of_measurement="°F",
+                device=self.device,
+                device_class="temperature_f"
+            ),
             "pressure":  DiscoverySensorConfig(
                 client_id=self.client_id,
                 prefix=self.prefix,
