@@ -17,7 +17,7 @@ class HassDiscovery:
         self.retain = retain
         
         self.device = DiscoveryDeviceConfig(
-            name="AirQuality",
+            name="Air Quality",
             model="Enviro+ on Raspbery Pi Zero W",
             manufacturer="Pimoroni & Raspberry Pi Foundation",
             sw_version=platform.platform(),
